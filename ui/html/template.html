@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>ASCII-ART-WEB</title>
+	<!-- Include Bootstrap CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+	<!-- Include your custom CSS file -->
+	<link rel="stylesheet" href="../static/style.css">
+</head>
+<body>
+	<div class="container-fluid bg-dark text-light">
+		<div class="row justify-content-center">
+			<div class="col-11 col-md-6 text-center">
+                <h1 align="center">ASCII-ART-WEB</h1>
+				<form action="/ascii-art" method="POST">
+					<div class="form-group">
+						<label for="textArea"></label>
+						<textarea name="text" class="form-control" id="textArea" rows="10" placeholder="Input your text:" required>{{.Text}}</textarea>
+					</div>
+                    <div class="form-group d-inline-block">
+                        <label for="selectBanner"></label>
+						<select name="format" class="form-control" id="selectBanner">
+                            <option value="standard">Standard</option>
+                            <option value="shadow">Shadow</option>
+                            <option value="thinkertoy">Thinkertoy</option>
+						</select>
+					</div>
+					<div class="d-inline-block">
+						<button type="reset" id="reset" class="btn btn-outline-secondary"  name="process" value="reset"><a style="text-decoration:none" href="/" class="button">Reset</a></button>
+						<button type="submit"  id="submit" class="btn btn-outline-primary" name="process" value="submit">Submit</button>
+						<button type="download" id="download" class="btn btn-outline-success" name="process" value="download">Download</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+    <div class="output"><pre>{{.Result}}</pre></div>
+</body>
+</html>
+
